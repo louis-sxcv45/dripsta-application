@@ -73,6 +73,30 @@ class _SignInScreenState extends State<SignInScreen> {
                 keyboardType: TextInputType.visiblePassword,
               ),
 
+              Container(
+                margin: EdgeInsets.only(
+                  top: AppMargin.m30
+                ),
+                width: double.infinity,
+                height: AppSize.s50,
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: ColorsManager.primaryColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadiusGeometry.circular(AppSize.s12)
+                    )
+                  ),
+                  onPressed: (){}, 
+                  child: Text(
+                    'Sign In',
+                    style: primaryTextStyle.copyWith(
+                      fontSize: FontSizeManager.f16,
+                      fontWeight: FontWeightManager.medium
+                    ),
+                  )
+                ),
+              ),
+
               Spacer(),
 
               Container(

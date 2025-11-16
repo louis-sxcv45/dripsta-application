@@ -42,7 +42,7 @@ class _FormInputState extends State<FormInput> {
         SizedBox(
           height: AppSize.s12,
         ),
-
+    
         Container(
           padding: EdgeInsets.symmetric(
             horizontal: AppPadding.p16
@@ -60,11 +60,11 @@ class _FormInputState extends State<FormInput> {
                   width: 17,
                   height: 12,
                 ),
-
+    
                 SizedBox(
                   width: AppSize.s16,
                 ),
-
+    
                 Expanded(
                   child: TextFormField(
                     style: primaryTextStyle,
@@ -95,11 +95,11 @@ class _FormInputState extends State<FormInput> {
                     keyboardType: widget.keyboardType,
                     obscureText: widget.isPassword ? _obsecureText : false,
                   ),
-                )
+                ),
               ],
             ),
           ),
-        )
+        ),
       ],
     );
   }
