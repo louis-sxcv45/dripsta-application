@@ -7,17 +7,14 @@ import 'package:dripsta/style_manager/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+class SignInScreen extends StatefulWidget {
+  const SignInScreen({super.key});
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  State<SignInScreen> createState() => _SignInScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
-
-  TextEditingController fullNameController = TextEditingController();
-  TextEditingController usernameController = TextEditingController();
+class _SignInScreenState extends State<SignInScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   String pathImage = ImagePath.assetPath;
@@ -36,47 +33,27 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Container(
                 margin: EdgeInsets.only(top: AppMargin.m30),
                 child: Text(
-                  'Sign Up',
+                  'Login',
                   style: primaryTextStyle.copyWith(
                     fontSize: AppSize.s24,
                     fontWeight: FontWeightManager.semiBold,
                   ),
                 ),
               ),
-      
+
               SizedBox(height: AppSize.s2),
-      
+
               Container(
-                margin: EdgeInsets.only(bottom: AppMargin.m50),
+                margin: EdgeInsets.only(bottom: AppMargin.m70),
                 child: Text(
-                  'Register and Happy Shoping',
+                  'Sign In to Countinue',
                   style: thirdTextStyle.copyWith(
                     fontSize: AppSize.s14,
                     fontWeight: FontWeightManager.regular,
                   ),
                 ),
               ),
-      
-              FormInput(
-                controller: fullNameController,
-                labelText: 'Full Name',
-                hintText: 'Your Full Name',
-                keyboardType: TextInputType.name,
-                iconPath: '$pathImage/fullname_icon.png',
-              ),
-      
-              SizedBox(height: AppSize.s20),
-      
-              FormInput(
-                controller: usernameController,
-                labelText: 'Username',
-                hintText: 'Your Username',
-                iconPath: '$pathImage/username_icon.png',
-                keyboardType: TextInputType.text,
-              ),
-      
-              SizedBox(height: AppSize.s20),
-      
+
               FormInput(
                 controller: emailController,
                 labelText: 'Email Address',
@@ -84,9 +61,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 keyboardType: TextInputType.emailAddress,
                 iconPath: '$pathImage/email_icon.png',
               ),
-      
+
               SizedBox(height: AppSize.s20),
-      
+
               FormInput(
                 controller: passwordController,
                 labelText: 'Password',
@@ -95,7 +72,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 isPassword: true,
                 keyboardType: TextInputType.visiblePassword,
               ),
-      
+
               Container(
                 margin: EdgeInsets.only(
                   top: AppMargin.m30
@@ -109,9 +86,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       borderRadius: BorderRadiusGeometry.circular(AppSize.s12)
                     )
                   ),
-                  onPressed: (){}, 
+                  onPressed: (){
+                    context.go('/home');
+                  }, 
                   child: Text(
-                    'Sign Up',
+                    'Sign In',
                     style: primaryTextStyle.copyWith(
                       fontSize: FontSizeManager.f16,
                       fontWeight: FontWeightManager.medium
@@ -119,30 +98,30 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   )
                 ),
               ),
-      
+
               Spacer(),
-      
+
               Container(
                 margin: EdgeInsets.only(bottom: AppMargin.m30),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Already have an account?',
+                      'Don\'t have an account?',
                       style: thirdTextStyle.copyWith(
                         fontSize: AppSize.s12,
                         fontWeight: FontWeightManager.regular,
                       ),
                     ),
-      
+
                     SizedBox(
                       width: AppSize.s4,
                     ),
-      
+
                     GestureDetector(
-                      onTap: () => context.go('/signIn'),
+                      onTap: () => context.go('/signUp'),
                       child: Text(
-                        'Sign In',
+                        'Sign Up',
                         style: primaryColor.copyWith(
                           fontSize: AppSize.s12,
                           fontWeight: FontWeightManager.medium
