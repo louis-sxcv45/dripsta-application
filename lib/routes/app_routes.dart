@@ -4,7 +4,7 @@ import 'package:dripsta/screens/home/chat_screen.dart';
 import 'package:dripsta/screens/home/home_screen.dart';
 import 'package:dripsta/screens/home/main_screen.dart';
 import 'package:dripsta/screens/home/profile_screen.dart';
-import 'package:dripsta/screens/home/whistlist_screen.dart';
+import 'package:dripsta/screens/home/wishlist_screen.dart';
 import 'package:dripsta/screens/splash_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -25,25 +25,27 @@ final GoRouter _goRoute = GoRouter(
         ),
 
         ShellRoute(
-          builder: (context, state, child) => MainScreen(
-            child: child,
-          ),
+          builder: (context, state, child) => MainScreen(child: child),
           routes: [
             GoRoute(
               path: 'home',
-              builder: (context, state) => const HomeScreen(),
+              pageBuilder: (context, state) =>
+                  NoTransitionPage(child: const HomeScreen()),
             ),
             GoRoute(
               path: 'chat',
-              builder: (context, state) => const ChatScreen(),
+              pageBuilder: (context, state) =>
+                  NoTransitionPage(child: const ChatScreen()),
             ),
             GoRoute(
-              path: 'whistList',
-              builder: (context, state) => const WhistlistScreen(),
+              path: 'wishlist',
+              pageBuilder: (context, state) =>
+                  NoTransitionPage(child: const WishListScreen()),
             ),
             GoRoute(
               path: 'profile',
-              builder: (context, state) => const ProfileScreen(),
+              pageBuilder: (context, state) =>
+                  NoTransitionPage(child: const ProfileScreen()),
             ),
           ],
         ),
