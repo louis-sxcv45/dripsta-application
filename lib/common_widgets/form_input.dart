@@ -76,7 +76,6 @@ class _FormInputState extends State<FormInput> {
                         vertical: AppPadding.p12
                       ),
                       hintStyle: thirdTextStyle.copyWith(
-                        fontSize: AppSize.s14,
                         fontWeight: FontWeightManager.regular
                       ),
                       border: InputBorder.none,

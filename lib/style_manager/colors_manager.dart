@@ -13,6 +13,9 @@ class ColorsManager {
   static Color secondaryTextColor = HexColor.fromHex('#999999');
   static Color thirdTextColor = HexColor.fromHex('#504F5E');
   static Color titleTextColor = HexColor.fromHex('#2E2E2E');
+  static Color borderColor = HexColor.fromHex('#302F37');
+  static Color bgCard = HexColor.fromHex('#ECEDEF');
+  static Color colorTransparent = Colors.transparent;
 }
 
 extension HexColor on Color {
