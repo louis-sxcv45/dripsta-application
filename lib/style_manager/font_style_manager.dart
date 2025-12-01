@@ -29,3 +29,7 @@ TextStyle titleTextColor = GoogleFonts.poppins(
 TextStyle bgTextColor = GoogleFonts.poppins(
   color: ColorsManager.bgColorTwo
 );
+
+TextStyle bgTextColorFive = GoogleFonts.poppins(
+  color: ColorsManager.bgColorFive
+);

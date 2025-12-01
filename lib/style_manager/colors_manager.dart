@@ -9,6 +9,7 @@ class ColorsManager {
   static Color bgColorTwo = HexColor.fromHex('#2B2937');
   static Color bgColorThree = HexColor.fromHex('#242231');
   static Color bgColorFour = HexColor.fromHex('#252836');
+  static Color bgColorFive = HexColor.fromHex('#2B2844');
   static Color primaryTextColor = HexColor.fromHex('#F1F0F2');
   static Color secondaryTextColor = HexColor.fromHex('#999999');
   static Color thirdTextColor = HexColor.fromHex('#504F5E');

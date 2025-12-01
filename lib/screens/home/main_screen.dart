@@ -18,7 +18,8 @@ class MainScreen extends StatelessWidget {
     return Obx(
       () => Scaffold(
         body: child,
-        backgroundColor: ColorsManager.bgColorOne,
+        // ignore: unrelated_type_equality_checks
+        backgroundColor: mc.currentIndex == 0 ? ColorsManager.bgColorOne : ColorsManager.bgColorThree,
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         bottomNavigationBar: ClipRRect(
           borderRadius: BorderRadius.vertical(
@@ -48,7 +49,7 @@ class MainScreen extends StatelessWidget {
                       // ignore: unrelated_type_equality_checks
                       color: mc.currentIndex == 0
                           ? ColorsManager.primaryColor
-                          : null,
+                          : Colors.grey,
                     ),
                   ),
                 ),
@@ -67,7 +68,7 @@ class MainScreen extends StatelessWidget {
                       // ignore: unrelated_type_equality_checks
                       color: mc.currentIndex == 1
                           ? ColorsManager.primaryColor
-                          : null,
+                          : Colors.grey,
                     ),
                   ),
                 ),
@@ -86,7 +87,7 @@ class MainScreen extends StatelessWidget {
                       // ignore: unrelated_type_equality_checks
                       color: mc.currentIndex == 2
                           ? ColorsManager.primaryColor
-                          : null,
+                          : Colors.grey,
                     ),
                   ),
                 ),
@@ -102,9 +103,10 @@ class MainScreen extends StatelessWidget {
                     child: Image.asset(
                       '$pathImage/icon_profile.png',
                       width: AppSize.s18,
+                      // ignore: unrelated_type_equality_checks
                       color: mc.currentIndex == 3
                           ? ColorsManager.primaryColor
-                          : null,
+                          : Colors.grey,
                     ),
                   ),
                 ),
@@ -116,7 +118,9 @@ class MainScreen extends StatelessWidget {
           backgroundColor: ColorsManager.secondaryColor,
           shape: CircleBorder(),
 
-          onPressed: () {},
+          onPressed: () {
+            context.push('/cart');
+          },
           child: Image.asset('$pathImage/icon_cart.png', width: AppSize.s20),
         ),
       ),
